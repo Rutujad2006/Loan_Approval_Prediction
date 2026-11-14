@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanWise AI | Loan Approval Prediction</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">🏦</div>
+            <div>
+                <h2>LoanWise AI</h2>
+                <span>INTELLIGENT LENDING</span>
+            </div>
+        </div>
+
+        <div class="nav-label">MAIN MENU</div>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="#application" class="nav-link">
+                <span>▤</span> Loan Application
+            </a>
+            <a href="#model-info" class="nav-link">
+                <span>◈</span> Model Information
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                Prediction System Ready
+            </div>
+            <p>Academic ML Project</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="breadcrumb">
+                LoanWise AI <span>/</span> Dashboard
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-badge">ML POWERED</span>
+                <div class="avatar">AI</div>
+            </div>
+        </header>
+
+        <div class="page-content" id="dashboard">
+
+            <!-- Welcome Banner -->
+            <section class="welcome-banner">
+                <div>
+                    <div class="eyebrow">SMART FINANCIAL INTELLIGENCE</div>
+                    <h1>Loan Approval Prediction</h1>
+                    <p>
+                        Make data-driven loan eligibility predictions
+                        using our trained machine learning model.
+                    </p>
+                    <a href="#application" class="banner-link">
+                        Start Application →
+                    </a>
+                </div>
+                <div class="banner-art">🏦</div>
+            </section>
+
+            <!-- Dashboard Statistics -->
+            <section class="stats-grid" id="model-info">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">◎</div>
+                    <div class="stat-label">Model Test Accuracy</div>
+                    <div class="stat-value">98.24%</div>
+                    <div class="stat-note">
+                        Evaluated on held-out test data
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">◈</div>
+                    <div class="stat-label">ML Algorithm</div>
+                    <div class="stat-value small">Random Forest</div>
+                    <div class="stat-note">
+                        Hyperparameter-tuned classifier
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div class="stat-label">Prediction Service</div>
+                    <div class="stat-value small">FastAPI</div>
+                    <div class="stat-note">
+                        REST API integration
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Loan Application -->
+            <section class="application-card" id="application">
+
+                <div class="section-heading">
+                    <div>
+                        <div class="section-tag">LOAN ASSESSMENT</div>
+                        <h2>New Loan Application</h2>
+                        <p>
+                            Complete the form below to receive
+                            your ML-based loan prediction.
+                        </p>
+                    </div>
+                    <span class="form-badge">11 INPUT FIELDS</span>
+                </div>
+
+                <form id="loanForm">
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <span class="section-number">01</span>
+                            <div>
+                                <h3>Applicant Information</h3>
+                                <p>Basic applicant details</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="no_of_dependents">
+                                    Number of Dependents
+                                </label>
+                                <input type="number"
+                                       id="no_of_dependents"
+                                       min="0" step="1"
+                                       placeholder="e.g. 2" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="education">
+                                    Education
+                                </label>
+                                <select id="education" required>
+                                    <option value="">Select education</option>
+                                    <option value="Graduate">Graduate</option>
+                                    <option value="Not Graduate">
+                                        Not Graduate
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="self_employed">
+                                    Employment Type
+                                </label>
+                                <select id="self_employed" required>
+                                    <option value="">Select employment</option>
+                                    <option value="Yes">Self Employed</option>
+                                    <option value="No">Not Self Employed</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="income_annum">
+                                    Annual Income (₹)
+                                </label>
+                                <input type="number"
+                                       id="income_annum"
+                                       min="0"
+                                       placeholder="e.g. 9600000"
+                                       required>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Loan Information -->
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <span class="section-number">02</span>
+                            <div>
+                                <h3>Loan Details</h3>
+                                <p>Requested loan information</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="loan_amount">
+                                    Requested Loan Amount (₹)
+                                </label>
+                                <input type="number"
+                                       id="loan_amount"
+                                       min="1"
+                                       placeholder="e.g. 12000000"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="loan_term">
+                                    Loan Term (Years)
+                                </label>
+                                <input type="number"
+                                       id="loan_term"
+                                       min="1" step="1"
+                                       placeholder="e.g. 12"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cibil_score">
+                                    CIBIL Score
+                                </label>
+                                <input type="number"
+                                       id="cibil_score"
+                                       min="300" max="900"
+                                       placeholder="300 - 900"
+                                       required>
+                                <small>Enter a score between 300 and 900</small>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Assets Information -->
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            <span class="section-number">03</span>
+                            <div>
+                                <h3>Financial Assets</h3>
+                                <p>Estimated value of owned assets</p>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="residential_assets_value">
+                                    Residential Assets (₹)
+                                </label>
+                                <input type="number"
+                                       id="residential_assets_value"
+                                       min="0"
+                                       placeholder="e.g. 8000000"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="commercial_assets_value">
+                                    Commercial Assets (₹)
+                                </label>
+                                <input type="number"
+                                       id="commercial_assets_value"
+                                       min="0"
+                                       placeholder="e.g. 3000000"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="luxury_assets_value">
+                                    Luxury Assets (₹)
+                                </label>
+                                <input type="number"
+                                       id="luxury_assets_value"
+                                       min="0"
+                                       placeholder="e.g. 5000000"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bank_asset_value">
+                                    Bank Assets (₹)
+                                </label>
+                                <input type="number"
+                                       id="bank_asset_value"
+                                       min="0"
+                                       placeholder="e.g. 4000000"
+                                       required>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="reset" class="reset-btn">
+                            Clear Form
+                        </button>
+                        <button type="submit"
+                                class="predict-btn"
+                                id="predictButton">
+                            ✦ Analyze Loan Application →
+                        </button>
+                    </div>
+
+                </form>
+
+                <!-- Prediction Result -->
+                <div id="result"
+                     class="result-box"
+                     role="status"
+                     aria-live="polite"></div>
+
+            </section>
+
+            <footer class="footer">
+                <span>© 2026 LoanWise AI | Academic ML Project</span>
+                <span>
+                    Educational predictions only.
+                    Not an official lending decision.
+                </span>
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script src="/script.js"></script>
+</body>
+</html>
